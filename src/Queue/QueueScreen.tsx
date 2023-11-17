@@ -62,6 +62,7 @@ const QueueScreen = () => {
 
   const handleRefreshList = () => {
     fetchCustomersData()
+    setSearchInput('')
     setRefreshCountdown(DEFAULT_REFRESH_TIMER)
   }
 

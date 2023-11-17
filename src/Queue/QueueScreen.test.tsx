@@ -122,6 +122,35 @@ describe('QueueScreen component', () => {
     expect(refreshButton).toBeDisabled()
   })
 
+  it('clears search input when user clicks refresh button', async () => {
+    jest.useFakeTimers()
+    const { render } = setup()
+    render()
+
+    await waitFor(() => {
+      const customersOnScreen = customers.map((customer) => screen.queryByText(customer))
+
+      expect(customersOnScreen[0]).toBeInTheDocument()
+      expect(customersOnScreen[1]).toBeInTheDocument()
+      expect(customersOnScreen[2]).toBeInTheDocument()
+      expect(customersOnScreen[3]).toBeInTheDocument()
+    })
+
+    act(() => {
+      jest.runAllTimers()
+    })
+
+    const refreshButton = screen.getByRole('button')
+    const searchInput = screen.getByPlaceholderText('Search customers')
+
+    fireEvent.input(searchInput, { target: { value: 'Fred' } })
+    fireEvent.click(refreshButton)
+
+    expect(refreshButton).toBeDisabled()
+    expect(searchInput).toBeDisabled()
+    expect(searchInput).toHaveValue('')
+  })
+
   it('displays error message when error occurs fetching customers', async () => {
     const { render, store } = setup()
     render()
