@@ -27,7 +27,7 @@ describe('QueueScreen component', () => {
     })
   })
 
-  it('shows a single customer when using the search input with input set to Alex', async () => {
+  it('shows a single customer when using the search input with value set to Alex', async () => {
     const { render } = setup()
     render()
 
