@@ -23,7 +23,7 @@ const Customer = ({ customer, expectedTime }: ICustomerProps) => {
   }
 
   return (
-    <CustomerCard>
+    <CustomerCard data-testid="customer-card">
       <ProfilePicture emailAddress={customer?.emailAddress} />
       <Content>
         <Name>{customer.name}</Name>

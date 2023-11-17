@@ -34,12 +34,7 @@ describe('QueueScreen component', () => {
     const searchInput = screen.getByPlaceholderText('Search customers')
 
     await waitFor(() => {
-      const customersOnScreen = customers.map((customer) => screen.queryByText(customer))
-
-      expect(customersOnScreen[0]).toBeInTheDocument()
-      expect(customersOnScreen[1]).toBeInTheDocument()
-      expect(customersOnScreen[2]).toBeInTheDocument()
-      expect(customersOnScreen[3]).toBeInTheDocument()
+      screen.getAllByTestId('customer-card')
     })
 
     fireEvent.input(searchInput, { target: { value: 'Alex' } })
@@ -57,12 +52,7 @@ describe('QueueScreen component', () => {
     const searchInput = screen.getByPlaceholderText('Search customers')
 
     await waitFor(() => {
-      const customersOnScreen = customers.map((customer) => screen.queryByText(customer))
-
-      expect(customersOnScreen[0]).toBeInTheDocument()
-      expect(customersOnScreen[1]).toBeInTheDocument()
-      expect(customersOnScreen[2]).toBeInTheDocument()
-      expect(customersOnScreen[3]).toBeInTheDocument()
+      screen.getAllByTestId('customer-card')
     })
 
     const searchInputContent = 'Albert'
@@ -82,12 +72,7 @@ describe('QueueScreen component', () => {
     expect(refreshButton).toBeDisabled()
 
     await waitFor(() => {
-      const customersOnScreen = customers.map((customer) => screen.queryByText(customer))
-
-      expect(customersOnScreen[0]).toBeInTheDocument()
-      expect(customersOnScreen[1]).toBeInTheDocument()
-      expect(customersOnScreen[2]).toBeInTheDocument()
-      expect(customersOnScreen[3]).toBeInTheDocument()
+      screen.getAllByTestId('customer-card')
     })
 
     act(() => {
@@ -103,12 +88,7 @@ describe('QueueScreen component', () => {
     render()
 
     await waitFor(() => {
-      const customersOnScreen = customers.map((customer) => screen.queryByText(customer))
-
-      expect(customersOnScreen[0]).toBeInTheDocument()
-      expect(customersOnScreen[1]).toBeInTheDocument()
-      expect(customersOnScreen[2]).toBeInTheDocument()
-      expect(customersOnScreen[3]).toBeInTheDocument()
+      screen.getAllByTestId('customer-card')
     })
 
     act(() => {
@@ -128,12 +108,7 @@ describe('QueueScreen component', () => {
     render()
 
     await waitFor(() => {
-      const customersOnScreen = customers.map((customer) => screen.queryByText(customer))
-
-      expect(customersOnScreen[0]).toBeInTheDocument()
-      expect(customersOnScreen[1]).toBeInTheDocument()
-      expect(customersOnScreen[2]).toBeInTheDocument()
-      expect(customersOnScreen[3]).toBeInTheDocument()
+      screen.getAllByTestId('customer-card')
     })
 
     act(() => {
