@@ -35,7 +35,7 @@ If using `yarn`:
 yarn test
 ```
 
-## Additional dependencies not included in original boilerplate project
+## Additional dependencies not included in original boilerplate project
 
 - `crypto-js` and `crypto-browserify` was used to create `messageToSHA256` which generates a SHA256 hash. I originally was planning on using the [Web Crypto API `digest` function](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest#basic_example) but this didn not play too well with Jest and React Testing Library.
 - `@testing-library/dom`, `@testing-library/jest-dom` and `@testing-library/react` (all dev dependencies) were used to test React components and user interactions.
