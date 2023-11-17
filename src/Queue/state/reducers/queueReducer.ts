@@ -1,4 +1,4 @@
-import { Action } from 'Queue/state/actions'
+import { QueueAction } from 'Queue/state/actions'
 import { QueueActionType } from 'Queue/state/action-types'
 import { ICustomersToday } from 'Queue/QueueScreen'
 
@@ -14,7 +14,7 @@ export const initialState: QueueState = {
   error: null,
 }
 
-export const queueReducer = (state: QueueState = initialState, action: Action): QueueState => {
+export const queueReducer = (state: QueueState = initialState, action: QueueAction): QueueState => {
   switch (action.type) {
     case QueueActionType.FETCH_CUSTOMERS:
       return { ...state, loading: true }

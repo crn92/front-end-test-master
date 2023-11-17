@@ -1,12 +1,12 @@
 import { Dispatch } from 'redux'
 
 import { getQueueData } from 'mockApi'
-import { Action } from 'Queue/state/actions'
+import { QueueAction } from 'Queue/state/actions'
 import { QueueActionType } from 'Queue/state/action-types'
 import { sleep } from 'utils/generic'
 
 export const fetchCustomersData = () => {
-  return async (dispatch: Dispatch<Action>) => {
+  return async (dispatch: Dispatch<QueueAction>) => {
     dispatch({
       type: QueueActionType.FETCH_CUSTOMERS,
     })
