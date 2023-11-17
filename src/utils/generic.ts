@@ -1,6 +1,6 @@
 import sha256 from 'crypto-js/sha256'
 
-export const messageToSHA256Hex = (message: string) => {
+export const messageToSHA256 = (message: string) => {
   return sha256(message).toString()
 }
 

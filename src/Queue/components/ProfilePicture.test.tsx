@@ -8,8 +8,8 @@ describe('ProfilePicture', () => {
     const mockImageHex = '0123456789'
     const expectedImgUrl = `https://gravatar.com/avatar/${mockImageHex}?s=290`
 
-    const messageToSHA256HexMock = jest.spyOn(genericUtils, 'messageToSHA256Hex')
-    messageToSHA256HexMock.mockImplementation(() => mockImageHex)
+    const messageToSHA256Mock = jest.spyOn(genericUtils, 'messageToSHA256')
+    messageToSHA256Mock.mockImplementation(() => mockImageHex)
 
     render(<ProfilePicture emailAddress="foo@bar.com" />)
 

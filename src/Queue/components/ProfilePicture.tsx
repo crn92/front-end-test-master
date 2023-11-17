@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import { messageToSHA256Hex } from 'utils/generic'
+import { messageToSHA256 } from 'utils/generic'
 
 const DEFAULT_IMAGE_SIZE = 290
 
@@ -19,7 +19,7 @@ const ProfilePicture = ({ emailAddress }: IProfilePictureProps) => {
   const [customerProfilePicture, setCustomerProfilePicture] = useState<null | string>(null)
 
   const getProfilePicture = (emailAddress: string) => {
-    const emailHex = messageToSHA256Hex(emailAddress)
+    const emailHex = messageToSHA256(emailAddress)
     setCustomerProfilePicture(`https://gravatar.com/avatar/${emailHex}?s=${DEFAULT_IMAGE_SIZE}`)
   }
 
