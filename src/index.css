@@ -1,0 +1,16 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --primary-color: #f80347;
+  --secondary-color: #457f8c;
+  --text-color: var(--black);
+  --bg-color: #faf9f6;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  background-color: var(--bg-color);
+}
