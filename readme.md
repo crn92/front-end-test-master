@@ -35,6 +35,14 @@ If using `yarn`:
 yarn test
 ```
 
+## Additional dependencies not included in original boilerplate project
+
+- `crypto-js` and `crypto-browserify` was used to create `messageToSHA256` which generates a SHA256 hash. I originally was planning on using the [Web Crypto API `digest` function](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest#basic_example) but this didn not play too well with Jest and React Testing Library.
+- `@testing-library/dom`, `@testing-library/jest-dom` and `@testing-library/react` (all dev dependencies) were used to test React components and user interactions.
+- `redux-mock-store` (dev dependency) was used to test redux action creators.
+- `react-error-overlay` (dev dependency) was used to circumvent an issue introduced by `react-scripts` where HMR would add an `iframe` into the DOM (the joys of `create-react-app`). [GitHub issue here](https://github.com/facebook/create-react-app/issues/11773).
+- various `@types` dev dependencies were installed for TypeScript goodness.
+
 ## Original `readme.md` content below ⬇️
 
 ## Preface
